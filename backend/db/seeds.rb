@@ -12,6 +12,9 @@ User.destroy_all
   User.find_or_create_by(name: name, address: address, email: email, phone_number: phone_number, birthday: bday, education: college)
 end
 
+
+
+change change
 # Review.destroy_all
 # review1 = Review.find_or_create_by(user_id: user1.id, course_id: alegbra.id, content: "", rating: 5)
 # review2 = Review.find_or_create_by(user_id: user2.id, course_id: basic_math.id , content: "", rating: 4)
