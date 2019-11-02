@@ -1,10 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import {Menu} from 'semantic-ui-react'
 
 function Navbar() {
   return(
     <Menu>
-      <Menu.Item><h3 className="header">academia</h3></Menu.Item>
+      <Menu.Item className="header"
+        name='academia'
+        as={Link}
+        to="/"
+         />
+
       <Menu.Item
         name='aboutUs'
       />
@@ -25,6 +32,3 @@ function Navbar() {
 }
 
 export default Navbar;
-/*
-took out active and onClick refer to semantic->menu->header
- */

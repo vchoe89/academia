@@ -1,16 +1,17 @@
 import React from 'react'
 import {Card} from 'semantic-ui-react'
-const URL = 'http://localhost:3000/courses'
+import {Link} from 'react-router-dom'
 
 const CourseCard = (props) => {
-
-
-
-  return (
-    <Card className='ui centered card'>
-      <Card.Header> {props.course.name} </Card.Header>
-    </Card>
-
+  return(
+    props.courses.map(course => {
+      return <Card key={course.id}>
+        <Link>
+          <h1>{course.name}</h1>
+          <h4>{course.location}</h4>
+        </Link>
+      </Card>
+    })
   )
 }
 

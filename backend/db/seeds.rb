@@ -33,13 +33,13 @@ reading = Course.find_or_create_by(name: "Reading", hourly_rate: 25, location: "
 
 advanced_writing = Course.find_or_create_by(name: "Advanced Writing", hourly_rate: 35, location: "Aspen Hill, MD", category_id: english.id, instructor_id: User.all[7].id)
 
-chemistry = Course.find_or_create_by(name: "Chemistry", hourly_rate: 30, location: "White Oak, MD", category_id: english.id, instructor_id: User.all[8].id)
+chemistry = Course.find_or_create_by(name: "Chemistry", hourly_rate: 30, location: "White Oak, MD", category_id: science.id, instructor_id: User.all[8].id)
 
 biology = Course.find_or_create_by(name: "Biology", hourly_rate: 30, location: "Silver Spring, MD", category_id: science.id, instructor_id: User.all[8].id)
 
 basic_science = Course.find_or_create_by(name: "Basic Science", hourly_rate: 30, location: "Wheaton, MD", category_id: science.id, instructor_id: User.all[8].id)
 
-violin = Course.find_or_create_by(name: "Private Violin Lessons", hourly_rate: 25, location: "Cabin John, MD", category_id: science.id, instructor_id: User.all[9].id)
+violin = Course.find_or_create_by(name: "Private Violin Lessons", hourly_rate: 25, location: "Cabin John, MD", category_id: music.id, instructor_id: User.all[9].id)
 
 cello = Course.find_or_create_by(name: "Private Cello Lessons", hourly_rate: 20, location: "Silver Spring, MD", category_id: music.id, instructor_id: User.all[9].id)
 
