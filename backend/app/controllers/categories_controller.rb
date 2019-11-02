@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
 
   end
 
-
   def categories_serializer
     {
       :except => [:created_at, :updated_at],
