@@ -7,7 +7,7 @@ const Categories = (props) => {
   return(
     <Grid relaxed column={4}>
       <Grid.Column>
-        <Card>
+        <Card users={props.users}>
           <Link to={`${props.catObj}`}> {props.catObj} </Link>
         </Card>
 

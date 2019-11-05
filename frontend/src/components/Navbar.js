@@ -9,12 +9,15 @@ function Navbar() {
       <Menu.Item className="header"
         name='academia'
         as={Link}
-        to="/"
+        to="/main"
          />
 
       <Menu.Item
         name='aboutUs'
+        as={Link}
+        to="/about"
       />
+
       <Menu.Item
         name='jobs'
 

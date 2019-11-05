@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
         :except => [:created_at, :updated_at]
         }
       }
+      
     }
   end
 
