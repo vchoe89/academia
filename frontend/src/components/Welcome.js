@@ -13,10 +13,15 @@ function Welcome(){
       <div>
         <Animated animationIn="fadeInLeft" animationInDuration={2500} isVisible={true}>
           <div>
-              <h1 className='welcome'>Welcome</h1>
+              <h2 className='welcome'>Welcome to</h2>
+              <h1 className='welcome'>Academia</h1>
+              <h3 className='welcome'>what we do</h3>
           </div>
-        <NavLink className='ui button' to="/main">Get Started</NavLink>
+        <NavLink className='ui button welcome' to="/main" isVisible={false} >Get Started</NavLink>
         </Animated>
+      </div>
+      <div>
+        icon
       </div>
     </React.Fragment>
 
