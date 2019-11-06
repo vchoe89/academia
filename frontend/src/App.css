@@ -7,10 +7,16 @@
   font-family: 'Dancing Script', cursive;
 }
 
-.body {
+.welcome.container {
   background-image: url("https://images.pexels.com/photos/247819/pexels-photo-247819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-size: cover;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  width: auto;
 
+}
+
+.ui.center.aligned.container {
+  background-image: url("https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
 }
 
 .App-logo {
@@ -34,7 +40,7 @@
 
 .welcome {
   font-family: 'Dancing Script', cursive;
-  font-size: 150px;
+  font-size: 125px;
   text-align: center;
   position: relative;
   animation-name: example;
@@ -48,13 +54,98 @@
   }
 }
 
+.second.welcome {
+  font-family: 'Dancing Script', cursive;
+  font-size: 75px;
+  text-align: center;
+}
+
 .ui.center.button {
   align-items: center;
   align-content: center;
 }
 
-.category
+.ui.center.aligned.container{
+  padding-top: 150px;
+  padding-left: 50px;
+  padding-bottom: 150px;
+  padding-right: 50px;
+  box-sizing: content-box;
+}
+
+.row{
+  padding-top: 25px;
+}
+
+
+.ui.card.categories {
+  height: 150px;
+  width: 350px;
+}
+
 
 .category.header{
   font-family: fantasy;
+}
+/*
+.ui.welcome.button{
+  padding-left: 450px;
+} */
+
+.categories {
+  text-align: right;
+  padding-top: 80px;
+  padding-right: 6px;
+  font-size: 45px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.ui.card.courses{
+  margin: auto;
+}
+
+.Math{
+  background-image: url("https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+}
+
+.English{
+  background-image: url("https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+}
+
+.Science{
+  background-image: url("https://images.pexels.com/photos/4154/clinic-doctor-health-hospital.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+}
+
+.Music{
+  background-image: url("https://images.pexels.com/photos/45243/saxophone-music-gold-gloss-45243.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+}
+
+.Sports{
+  background-image: url("https://images.pexels.com/photos/163444/sport-treadmill-tor-route-163444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+}
+
+.popup{
+  margin: 0px;
+}
+
+.course.name{
+  margin-bottom: 5px;
+}
+
+.ui.green.button {
+  float: right;
+}
+
+.user.icon{
+  position: relative;
+  float: right;
+}
+
+.dropdown{
+  display: inline-block;
 }

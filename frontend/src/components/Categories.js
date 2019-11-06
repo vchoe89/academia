@@ -5,14 +5,13 @@ import {Grid, Card} from 'semantic-ui-react'
 const Categories = (props) => {
 
   return(
-    <Grid relaxed column={4}>
-      <Grid.Column>
-        <Card users={props.users}>
-          <Link to={`${props.catObj}`}> {props.catObj} </Link>
-        </Card>
-
-      </Grid.Column>
-    </Grid>
+        <Grid.Row>
+            <Card users={props.users}>
+              <Link to={`${props.catObj}`}>
+                <div className={props.catObj}> <h1 className='categories'>{props.catObj} </h1></div> 
+              </Link>
+            </Card>
+          </Grid.Row>
 
   )
 }
