@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import MainContainer from './components/MainContainer.js'
 import About from './components/About.js'
+import Login from './components/Login.js'
+import JobForm from './components/JobForm.js'
 import { useFetch } from './Hooks/useFetch.js'
-import Categories from './components/Categories.js'
 import CourseCard from './components/CourseCard.js'
-import _ from 'lodash';
-import {map} from 'lodash'
+import Image from './images/learn_image.jpeg'
+import Footer from './components/Footer.js'
+
 const URL = 'http://localhost:3000/'
-
-
 
 
 
@@ -43,38 +43,42 @@ function App() {
               return <MainContainer categories={categories}/>}}/>
 
           <Route exact path="/math" render={(props) => {
-              debugger
               let categoryId = props.match.url.slice(1)
-              let categoryObj = courses.find(category => category.name === categoryId).courses
-              return <CourseCard courses={categoryObj}/>
+              let courseObj = courses.filter(courses => courses.category.name === categoryId)
+              return <CourseCard courses={courseObj}/>
             }}/>
 
-        <Route exact path="/english" render={(props) => {
+          <Route exact path="/english" render={(props) => {
               let categoryId = props.match.url.slice(1)
-              let categoryObj = courses.find(category => category.name === categoryId).courses
-              return <CourseCard courses={categoryObj}/>
+              let courseObj = courses.filter(courses => courses.category.name === categoryId)
+              return <CourseCard courses={courseObj}/>
             }}/>
 
           <Route exact path="/science" render={(props) => {
               let categoryId = props.match.url.slice(1)
-              let categoryObj = courses.find(category => category.name === categoryId).courses
-              return <CourseCard courses={categoryObj}/>
+              let courseObj = courses.filter(courses => courses.category.name === categoryId)
+              return <CourseCard courses={courseObj}/>
             }}/>
 
-        <Route exact path="/music" render={(props) => {
-                let categoryId = props.match.url.slice(1)
-                let categoryObj = courses.find(category => category.name === categoryId).courses
-                return <CourseCard courses={categoryObj}/>
-              }}/>
+          <Route exact path="/music" render={(props) => {
+            let categoryId = props.match.url.slice(1)
+            let courseObj = courses.filter(courses => courses.category.name === categoryId)
+            return <CourseCard courses={courseObj}/>
+          }}/>
 
-        <Route exact path="/sports" render={(props) => {
-                let categoryId = props.match.url.slice(1)
-                let categoryObj = courses.find(category => category.name === categoryId).courses
-                return <CourseCard courses={categoryObj}/>
-              }}/>
+          <Route exact path="/sports" render={(props) => {
+            let categoryId = props.match.url.slice(1)
+            let courseObj = courses.filter(courses => courses.category.name === categoryId)
+            return <CourseCard courses={courseObj}/>
+          }}/>
 
-            <Route exact path="/about" component={About} />
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/about" component={About} />
+        <Route exact path="/JobForm"  render={(props) => {
+            return <JobForm categories={categories} />
+          }}/>
         </Switch>
+        <Footer />
       </Router>
 
     )
