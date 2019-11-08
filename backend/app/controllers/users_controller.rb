@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     render json: users.to_json(user_serializer)
   end
 
+  def create
+
+    render json: User.find_by(email: params["user"])
+  end
+
 
   def user_serializer
     {

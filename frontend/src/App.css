@@ -77,6 +77,33 @@
   padding-top: 25px;
 }
 
+.categories{
+  color: black;
+}
+
+.ui.card.course.cards{
+    position: relative;
+    background: blue;
+    display: inline-block;
+    color: white;
+    padding: .24em .3em .25em;
+  &:after {
+    z-index: -1;
+		content: "";
+		position: absolute;
+		top: 0;
+     left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: inherit;
+     border: 1px solid blue;
+		-webkit-transform: skewX(-10deg);
+		-moz-transform: skewX(-10deg);
+		-ms-transform: skewX(-10deg);
+		transform: skewX(-10deg);
+  }
+}
+
 
 .ui.card.categories {
   height: 150px;
@@ -133,6 +160,23 @@
   margin: 0px;
 }
 
+.user.welcome{
+  text-align: center;
+  padding-top: 20px;
+  position: absolute;
+  font-style: italic;
+  left: 85%
+}
+
+.login.form.text{
+  text-align: center;
+}
+
+.existing.user{
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
 .course.name{
   margin-bottom: 5px;
 }
@@ -141,11 +185,15 @@
   float: right;
 }
 
-.user.icon{
+.user.big.circular.icon{
   position: relative;
   float: right;
 }
 
 .dropdown{
   display: inline-block;
+}
+
+.ui.inverted.segment{
+  right: 25%
 }

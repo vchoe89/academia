@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Welcome from './components/Welcome.js'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import MainContainer from './components/MainContainer.js'
 import About from './components/About.js'
@@ -23,6 +23,7 @@ function App() {
 
   const [courses, setCourses] = useState([])
   const [categories, setCategories] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     setCourses(coursesFetch)
@@ -34,13 +35,35 @@ function App() {
 
 
 
+  const handleCourse = (course) => {
+    course.instructor_id = currentUser.id
+    let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(course)
+    }
+    fetch(URL+'courses', configObj)
+    .then(r => r.json())
+    .then(course =>
+      setCourses([...courses, course])
+    )
+  }
+
+  const onChangeUser = (user) => {
+    setCurrentUser(user)
+  }
+
+
+
     return(
       <Router>
-        <Navbar />
+        <Navbar currentUser={currentUser}/>
         <Switch>
           <Route exact path="/" component={Welcome}/>
           <Route exact path="/main" render={(props) => {
-              return <MainContainer categories={categories}/>}}/>
+              return <MainContainer currentUser={currentUser} categories={categories}/>}}/>
 
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)
@@ -72,10 +95,14 @@ function App() {
             return <CourseCard courses={courseObj}/>
           }}/>
 
-        <Route exact path="/login" component={Login}/>
+        <Route exact path="/login" render={()=> {
+            return currentUser === null ? <Login currentUser={currentUser} onChangeUser={onChangeUser}/> :
+            <Redirect to='main' />
+          }}/>
+
         <Route exact path="/about" component={About} />
         <Route exact path="/JobForm"  render={(props) => {
-            return <JobForm categories={categories} />
+            return <JobForm handleCourse={handleCourse} categories={categories} />
           }}/>
         </Switch>
         <Footer />

@@ -2,8 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {Menu, Icon} from 'semantic-ui-react'
 
-function Navbar() {
+function Navbar(props) {
   return(
+
     <Menu>
       <Menu.Item
         as={Link}
@@ -26,10 +27,13 @@ function Navbar() {
       />
       <Menu.Item
         name='locations'
-
       />
 
-    <div className='user icon'><Icon size='big' circular={true} name='user'/></div>
+    <div className='user welcome'>
+      {
+        props.currentUser === null ? null : <h4>Welcome {(props.currentUser.name)}!</h4>
+      }
+    </div>
 
       <Menu.Item position="right"
         name='sign in'

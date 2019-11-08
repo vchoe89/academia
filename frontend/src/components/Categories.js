@@ -6,9 +6,9 @@ const Categories = (props) => {
 
   return(
         <Grid.Row>
-            <Card users={props.users}>
+            <Card className='course cards'users={props.users}>
               <Link to={`${props.catObj}`}>
-                <div className={props.catObj}> <h1 className='categories'>{props.catObj} </h1></div> 
+                <div className={props.catObj}> <h1 className='categories'>{props.catObj} </h1></div>
               </Link>
             </Card>
           </Grid.Row>

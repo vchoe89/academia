@@ -6,6 +6,11 @@ class CoursesController < ApplicationController
     render json: courses.to_json(courses_serializer)
   end
 
+  def create
+    course = Course.create(course_params)
+    render json: course
+  end
+
 
   def courses_serializer
     {
@@ -18,6 +23,13 @@ class CoursesController < ApplicationController
           }}
 
     }
+  end
+
+
+  private
+
+  def course_params
+    params.require(:course).permit(:name, :hourly_rate, :category_id, :location, :instructor_id)
   end
 
 
