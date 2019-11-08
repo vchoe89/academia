@@ -24,6 +24,7 @@ function App() {
   const [courses, setCourses] = useState([])
   const [categories, setCategories] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
+  const [bookedCourses, setBookedCourses] = useState([])
 
   useEffect(() => {
     setCourses(coursesFetch)
@@ -56,6 +57,15 @@ function App() {
   }
 
 
+  const bookCourse = (course) => {
+    if(currentUser === null){
+      alert("You need to be a member to book a course!")
+    }else{
+      setBookedCourses([...bookedCourses, course])
+    }
+  }
+
+
 
     return(
       <Router>
@@ -68,31 +78,31 @@ function App() {
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard courses={courseObj}/>
+              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/english" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard courses={courseObj}/>
+              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/science" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard courses={courseObj}/>
+              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/music" render={(props) => {
             let categoryId = props.match.url.slice(1)
             let courseObj = courses.filter(courses => courses.category.name === categoryId)
-            return <CourseCard courses={courseObj}/>
+            return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
           }}/>
 
           <Route exact path="/sports" render={(props) => {
             let categoryId = props.match.url.slice(1)
             let courseObj = courses.filter(courses => courses.category.name === categoryId)
-            return <CourseCard courses={courseObj}/>
+            return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
           }}/>
 
         <Route exact path="/login" render={()=> {
@@ -105,9 +115,7 @@ function App() {
             return <JobForm handleCourse={handleCourse} categories={categories} />
           }}/>
         </Switch>
-        <Footer />
       </Router>
-
     )
 }
 
