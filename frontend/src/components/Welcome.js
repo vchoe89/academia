@@ -3,6 +3,7 @@ import {Animated} from "react-animated-css";
 import {NavLink} from 'react-router-dom';
 import {Container} from 'semantic-ui-react'
 import Navbar from './Navbar.js'
+import Footer from './Footer.js'
 
 function Welcome(){
 
@@ -17,9 +18,10 @@ function Welcome(){
                 <NavLink className='ui button welcome' to="/main" isVisible={false}>Get Started</NavLink>
               </div>
         </Animated>
-      <div>icon</div>
       </Container>
       </div>
+      <Footer/>
+
     </React.Fragment>
 
   )
