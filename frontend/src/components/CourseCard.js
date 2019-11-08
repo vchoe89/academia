@@ -1,16 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card, Button, Popup} from 'semantic-ui-react'
 import {useFetch} from '../Hooks/useFetch.js'
 
 const CourseCard = (props) => {
 
-
+  const [button, useButton] = useState(false)
 
   const bookTutor = (e) => {
+    debugger
     let toggle = e.target.disabled
     let courseName = props.courses.find(course => course.name === e.target.parentElement.parentElement.firstElementChild.innerText).name
     if(courseName === e.target.parentElement.parentElement.firstElementChild.innerText){
-  
+      useButton(true)
     }
   }
 
@@ -27,7 +28,7 @@ const CourseCard = (props) => {
               />
           <h4>${course.hourly_rate} per hour</h4>
           <h4>Located in: {course.location}</h4>
-          <div className='book button'><Button color='green' disabled={true} onClick={(e)=>bookTutor(e)}>Book</Button></div>
+          <div className='book button'><Button color='green' disabled={button} onClick={(e) => bookTutor(e)} >Book</Button></div>
       </Card>
     })
   )

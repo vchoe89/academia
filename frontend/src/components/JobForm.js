@@ -15,32 +15,40 @@ const rates =[
     { key: 100, text: '$100/hr', value: 100},
   ]
 
-  const categories = [
-    {key: 'math', text: 'Math', value: 'math'},
-    {key: 'english', text: 'English', value: 'math'},
-    {key: 'science', text: 'Science', value: 'math'},
-    {key: 'music', text: 'Music', value: 'math'},
-    {key: 'sports', text: 'Sports', value: 'math'},
 
-  ]
 
 const JobForm = (props) => {
 
+  const categoryDropDown = () => {
+    return props.categories.map(categories => {
+      return {key: categories.name, text: categories.name, value: categories.id}
+    })
+  }
+
   const [course, setCourse] = useState("")
-  const [rate, setRate] = useState("")
-  const [category, setCategory] = useState("")
+  const [hourly_rate, setRate] = useState("")
+  const [category_id, setCategory] = useState("")
   const [location, setLocation] = useState("")
+
+
+  const handleSubmit = (e) => {
+    props.handleCourse({name: course, hourly_rate, category_id, location})
+    setCourse("")
+    setRate("")
+    setCategory("")
+    setLocation("")
+  }
 
 
   return(
       <Container textAlign='centered'>
-          <Form onSubmit={(e) => handleJobForm(e)}>
-              <Form.Input name='course' label='Course Name' placeholder='Course Name' width={7} />
+          <Form onSubmit={handleSubmit}>
+              <Form.Input onChange={(e) => setCourse(e.target.value)} value={course} name='course' label='Course Name' placeholder='Course Name' width={7} />
                 <Menu>
-                  <Dropdown text='Your Rate' selection options={rates} />
-                  <Dropdown text='Select a Category' selection options={categories} />
+                  <Dropdown placeholder='Your Rate' onChange={(e, {value}) => setRate(value)} value={props.value} selection options={rates} />
+                  <Dropdown placeholder='Select a Category' onChange={(e, {value}) => setCategory(value)} value={props.value} selection options={categoryDropDown()} />
                 </Menu>
-              <Form.Input label='Loction' placeholder='City, State' width={7} />
+              <Form.Input label='Loction' onChange={(e) => setLocation(e.target.value)} value={location} placeholder='City, State' width={7} />
             <Button type='submit'>Submit</Button>
           </Form>
       </Container>
