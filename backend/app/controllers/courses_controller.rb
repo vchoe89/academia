@@ -20,8 +20,7 @@ class CoursesController < ApplicationController
         },
         :category => {
           :except => [:created_at, :updated_at]
-          }}
-
+        }}
     }
   end
 

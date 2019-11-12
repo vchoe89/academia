@@ -29,11 +29,22 @@ function Navbar(props) {
         name='locations'
       />
 
-    <div className='user welcome'>
-      {
-        props.currentUser === null ? null : <h4>Welcome {(props.currentUser.name)}!</h4>
-      }
-    </div>
+      <Menu.Item
+        name='Your Courses'
+        as={Link}
+        to='/courses'
+        />
+
+      <div className='user welcome'>
+        {
+          props.currentUser === null ? null : <h4>Welcome {(props.currentUser.name)}!</h4>
+        }
+      </div>
+
+      <Menu.Item position='right'
+        name='View Your Profile'
+
+        />
 
       <Menu.Item position="right"
         name='sign in'

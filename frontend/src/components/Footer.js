@@ -5,7 +5,7 @@ import {Menu} from 'semantic-ui-react'
 function Footer(){
 
   return(
-    <Menu stackable>
+    <Menu stackable className='footer'>
       <Menu.Item>
           <img src='https://react.semantic-ui.com/logo.png' />
         </Menu.Item>

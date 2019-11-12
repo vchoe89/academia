@@ -7,10 +7,14 @@ import MainContainer from './components/MainContainer.js'
 import About from './components/About.js'
 import Login from './components/Login.js'
 import JobForm from './components/JobForm.js'
+import YourCourses from './components/YourCourses.js'
 import { useFetch } from './Hooks/useFetch.js'
 import CourseCard from './components/CourseCard.js'
 import Image from './images/learn_image.jpeg'
 import Footer from './components/Footer.js'
+import swal from 'sweetalert';
+
+
 
 const URL = 'http://localhost:3000/'
 
@@ -36,6 +40,7 @@ function App() {
 
 
 
+
   const handleCourse = (course) => {
     course.instructor_id = currentUser.id
     let configObj = {
@@ -56,22 +61,37 @@ function App() {
     setCurrentUser(user)
   }
 
+  const postCourse = (currentUser, course) => {
+    console.log("attemping to fetch");
+  }
+
+  const filterCourses = () => {
+    return currentUser.booked_courses.map(course => {
+      return course
+    })
+  }
+
+  const filterReviews = () => {
+    return currentUser.reviews.map(review => {
+      return review
+    })
+  }
+
 
   const bookCourse = (course) => {
     if(currentUser === null){
-      alert("You need to be a member to book a course!")
+      swal ( "Oops" ,  "You must be a member to book a class!" ,  "error" )
     }else{
-      setBookedCourses([...bookedCourses, course])
+      postCourse()
     }
   }
-
 
 
     return(
       <Router>
         <Navbar currentUser={currentUser}/>
         <Switch>
-          <Route exact path="/" component={Welcome}/>
+          <Route exact path="/" component={Welcome} />
           <Route exact path="/main" render={(props) => {
               return <MainContainer currentUser={currentUser} categories={categories}/>}}/>
 
@@ -96,7 +116,7 @@ function App() {
           <Route exact path="/music" render={(props) => {
             let categoryId = props.match.url.slice(1)
             let courseObj = courses.filter(courses => courses.category.name === categoryId)
-            return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
+            return <CourseCard bookCourse={bookCourse}  courses={courseObj}/>
           }}/>
 
           <Route exact path="/sports" render={(props) => {
@@ -105,7 +125,14 @@ function App() {
             return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
           }}/>
 
+        <Route exact path="/courses" render={(props) => {
+            return currentUser === null ? swal("Oops", "You must be logged in first!", "error") :
+              <YourCourses filterReviews={filterReviews()} filterCourses={filterCourses()} />
+
+          }} />
+
         <Route exact path="/login" render={()=> {
+
             return currentUser === null ? <Login currentUser={currentUser} onChangeUser={onChangeUser}/> :
             <Redirect to='main' />
           }}/>
@@ -115,6 +142,7 @@ function App() {
             return <JobForm handleCourse={handleCourse} categories={categories} />
           }}/>
         </Switch>
+        <Footer />
       </Router>
     )
 }
