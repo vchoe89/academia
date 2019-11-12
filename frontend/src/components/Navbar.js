@@ -20,13 +20,10 @@ function Navbar(props) {
       />
 
       <Menu.Item
-        name='jobs'
+        name='Teach'
         as={Link}
         to="/JobForm"
 
-      />
-      <Menu.Item
-        name='locations'
       />
 
       <Menu.Item
@@ -41,8 +38,9 @@ function Navbar(props) {
         }
       </div>
 
-      <Menu.Item position='right'
+      <Menu.Item
         name='View Your Profile'
+        as={Link}
 
         />
 

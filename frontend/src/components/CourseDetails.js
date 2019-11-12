@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Card, Button, Popup} from 'semantic-ui-react'
 
 const CourseDetails = (props) => {
 
+
   return(
     <Card.Group>
-      <Card>
+      <Card >
         <Card.Content>
           <Card.Header>{props.course.name}</Card.Header>
           <Card.Meta>Taught by: {props.course.instructor.name}</Card.Meta>
@@ -14,7 +15,7 @@ const CourseDetails = (props) => {
         </Card.Content>
           <Card.Content extra>
                 <div className='book button'>
-                  <Button color='green' disabled={false} onClick={(e) => props.bookCourse(props.course)} >Book</Button>
+                  <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
                 </div>
           </Card.Content>
       </Card>

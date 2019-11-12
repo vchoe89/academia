@@ -5,8 +5,12 @@ class ReviewsController < ApplicationController
     render json: reviews
   end
 
+  def create
 
-
+    review = Review.create(review_params)
+    
+    render json: review.customer.booked_courses.last
+  end
 
   def review_serializer
     {
@@ -15,6 +19,12 @@ class ReviewsController < ApplicationController
         :except => [:created_at, :updated_at]
         }}
     }
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:course_id, :customer_id)
   end
 
 end
