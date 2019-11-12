@@ -1,29 +1,24 @@
 import React, {useState} from 'react'
-import { Card } from 'semantic-ui-react'
+import {Card, Container, Grid} from 'semantic-ui-react'
+import YourCourseDetails from './YourCourseDetails.js'
 
 
 
 const YourCourses = (props) => {
 
   return(
-    <React.Fragment>
-    <h1>Past Courses</h1>
+    <Container textAlign='center'>
       <Card.Group>
-        <Card>
-          <Card.Content>
-            {props.filterCourses.map(course => {
-              return <Card >
-                <Card.Header className='your courses card' >{course.name}</Card.Header>
-
-              </Card>
-            })}
-            {props.filterReviews.map(review => {
-              return <Card.Description>{review.content}</Card.Description>
-            })}
-          </Card.Content>
-        </Card>
+        {props.bookedCourses.map(course => {
+         return <YourCourseDetails course={course} />
+        })
+      }
       </Card.Group>
-      </React.Fragment>
+    </Container>
+
+
+
+
   )
 
 

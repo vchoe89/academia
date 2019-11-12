@@ -24,11 +24,28 @@ function App() {
 
   let coursesFetch = useFetch(URL+'courses', [])
   let categoriesFetch = useFetch(URL+'categories', [])
+  let reviewsFetch = useFetch(URL+'reviews', [])
 
   const [courses, setCourses] = useState([])
   const [categories, setCategories] = useState([])
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState({
+    id: 189,
+    name: "Garret Fahey",
+    address: "40244 Archie Street",
+    birthday: "1998-04-08",
+    email: "arie_frami@example.net",
+    phone_number: "265.239.4954",
+    profile_image: null,
+    education: "South Krajcik",
+    skills: null,
+    travel_distance: null,
+    bio: null,
+    booked_courses: [ ]
+})
   const [bookedCourses, setBookedCourses] = useState([])
+  const [users, setUsers] = useState([])
+  const [reviews, setReviews] = useState([])
+  const [button, setButton] = useState(false)
 
   useEffect(() => {
     setCourses(coursesFetch)
@@ -37,6 +54,13 @@ function App() {
   useEffect(() => {
     setCategories(categoriesFetch)
   },[categoriesFetch])
+
+  useEffect(() => {
+    setReviews(reviewsFetch)
+  },[reviewsFetch])
+
+
+
 
 
 
@@ -52,8 +76,12 @@ function App() {
     }
     fetch(URL+'courses', configObj)
     .then(r => r.json())
-    .then(course =>
-      setCourses([...courses, course])
+    .then(newCourseObj =>
+      setCourses(
+
+        
+        // [...courses, {...newCourseObj, instructor: {...currentUser}}]
+      )
     )
   }
 
@@ -61,31 +89,41 @@ function App() {
     setCurrentUser(user)
   }
 
-  const postCourse = (currentUser, course) => {
-    console.log("attemping to fetch");
+  const bookCourse = (course, currentUser) => {
+    if(currentUser === null){
+      swal("Oops!", "You must be logged in to book a course!", "error")
+    }else{
+      let courseObj = {course_id: course.id, customer_id: currentUser.id}
+      let configObj = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(courseObj)
+      }
+      fetch(URL+'reviews', configObj)
+      .then(r => r.json())
+      .then(bookedCourseObj =>
+        setCurrentUser(
+          {...currentUser, booked_courses: [...currentUser.booked_courses, bookedCourseObj]}
+        )
+      )
+    }
   }
 
-  const filterCourses = () => {
+  const bookedCourse = (course) => {
+    if(currentUser === null){
+      swal ( "Oops" ,  "You must be a member to book a class!" ,  "error" )
+    }else{
+      bookCourse(course)
+    }
+  }
+
+  const currentUsersCourses = () => {
     return currentUser.booked_courses.map(course => {
       return course
     })
   }
-
-  const filterReviews = () => {
-    return currentUser.reviews.map(review => {
-      return review
-    })
-  }
-
-
-  const bookCourse = (course) => {
-    if(currentUser === null){
-      swal ( "Oops" ,  "You must be a member to book a class!" ,  "error" )
-    }else{
-      postCourse()
-    }
-  }
-
 
     return(
       <Router>
@@ -98,37 +136,43 @@ function App() {
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
+              return <CourseCard button={button} currentUser={currentUser} bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/english" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
+              return <CourseCard currentUser={currentUser} bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/science" render={(props) => {
               let categoryId = props.match.url.slice(1)
               let courseObj = courses.filter(courses => courses.category.name === categoryId)
-              return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
+              return <CourseCard currentUser={currentUser} bookCourse={bookCourse} courses={courseObj}/>
             }}/>
 
           <Route exact path="/music" render={(props) => {
             let categoryId = props.match.url.slice(1)
             let courseObj = courses.filter(courses => courses.category.name === categoryId)
-            return <CourseCard bookCourse={bookCourse}  courses={courseObj}/>
+            return <CourseCard currentUser={currentUser} bookCourse={bookCourse}  courses={courseObj}/>
           }}/>
 
           <Route exact path="/sports" render={(props) => {
             let categoryId = props.match.url.slice(1)
             let courseObj = courses.filter(courses => courses.category.name === categoryId)
-            return <CourseCard bookCourse={bookCourse} courses={courseObj}/>
+            return <CourseCard currentUser={currentUser} bookCourse={bookCourse} courses={courseObj}/>
           }}/>
 
         <Route exact path="/courses" render={(props) => {
-            return currentUser === null ? swal("Oops", "You must be logged in first!", "error") :
-              <YourCourses filterReviews={filterReviews()} filterCourses={filterCourses()} />
-
+            if(currentUser === null){
+              swal("Oops", "You must be logged in to view your courses!", "error")
+            }else{
+              let bookedCourses = currentUser.booked_courses.map(course => {
+                return course
+              })
+              return currentUser === null ? swal("Oops", "You must be logged in first!", "error") :
+                <YourCourses bookedCourses={bookedCourses} />
+            }
           }} />
 
         <Route exact path="/login" render={()=> {
@@ -142,7 +186,6 @@ function App() {
             return <JobForm handleCourse={handleCourse} categories={categories} />
           }}/>
         </Switch>
-        <Footer />
       </Router>
     )
 }

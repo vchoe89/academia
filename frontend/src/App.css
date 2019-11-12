@@ -95,26 +95,28 @@
 
 .ui.card.course.cards{
     position: relative;
-    background: blue;
+    background: grey;
     display: inline-block;
-    color: white;
+    color: blue;
     padding: .24em .3em .25em;
+  }
   &:after {
     z-index: -1;
 		content: "";
 		position: absolute;
 		top: 0;
      left: 0;
-		height: 100%;
-		width: 100%;
+		height: 200px;
+		width: 200px;
 		background-color: inherit;
      border: 1px solid blue;
 		-webkit-transform: skewX(-10deg);
 		-moz-transform: skewX(-10deg);
 		-ms-transform: skewX(-10deg);
 		transform: skewX(-10deg);
+
   }
-}
+
 
 
 .ui.card.categories {
@@ -137,6 +139,7 @@
   padding-right: 6px;
   font-size: 45px;
   font-family: 'Abril Fatface', cursive;
+  color: blue;
 }
 
 .ui.card.courses{
@@ -243,6 +246,6 @@
   transform: translate(-50%, -50%);
 }
 
-.ui.stackable.footer.menu{
-
+.right.item.profile.link{
+  float: right;
 }
