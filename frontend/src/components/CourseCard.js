@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import CourseDetails from './CourseDetails.js'
-import {Card, Button, Popup} from 'semantic-ui-react'
+import {Container, Grid} from 'semantic-ui-react'
 
 const CourseCard = (props) => {
 
@@ -15,9 +15,15 @@ const CourseCard = (props) => {
   }
 
   return(
-    props.courses.map(course => {
-      return <CourseDetails  bookCourse={props.bookCourse} course={course} button={button}/>
+    <Container textAlign='center'>
+      <Grid className='course details'>
+        {
+        props.courses.map(course => {
+      return <CourseDetails bookCourse={props.bookCourse} course={course} button={button}/>
     })
+  }
+      </Grid>
+    </Container>
   )
 }
 

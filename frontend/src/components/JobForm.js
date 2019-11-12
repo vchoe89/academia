@@ -15,8 +15,6 @@ const rates =[
     { key: 100, text: '$100/hr', value: 100},
   ]
 
-
-
 const JobForm = (props) => {
 
   const categoryDropDown = () => {

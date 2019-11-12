@@ -54,8 +54,8 @@ swimming = Course.find_or_create_by(name: "Private Swimming Lessons", hourly_rat
 tennis = Course.find_or_create_by(name: "Private Tennis Lessons", hourly_rate: 30, location: "Reston, VA", category_id: sports.id, instructor_id: User.all[12].id)
 
 Review.destroy_all
-review1 = Review.find_or_create_by(customer_id: User.first.id, course_id: alegbra.id, content: "#{User.first.name} has been tutoring my son for the past 8 months. I have seen tremendous improvement on his grades and confidence since attending classes with #{User.first.name}", rating: 5)
-review2 = Review.find_or_create_by(customer_id: User.second.id, course_id: basic_math.id , content: "#{User.second.name} was very reliable and well educated to tutor my child. He was a wonderful help!", rating: 4)
-review3 = Review.find_or_create_by(customer_id: User.third.id, course_id: reading.id, content: "#{User.third.name} is a wonderful tutor. I found her to be very calm, friendly and helpful.", rating: 4)
-review4 = Review.find_or_create_by(customer_id: User.fourth.id, course_id: chemistry.id, content: "#{User.fourth.name} is such a wonderful tutor, and great with young students! Would highly recommend!", rating: 5)
-review5 = Review.find_or_create_by(customer_id: User.fifth.id, course_id: violin.id, content: "#{User.fifth.name} was an excellent teacher for my child. He genuinely loves to come in and learn how to play the violin!", rating: 5)
+review1 = Review.find_or_create_by(customer_id: User.first.id, course_id: alegbra.id, content: "#{User.all[6].name} has been tutoring my son for the past 8 months. I have seen tremendous improvement on his grades and confidence since attending classes with #{User.first.name}", rating: 5)
+review2 = Review.find_or_create_by(customer_id: User.second.id, course_id: basic_math.id , content: "#{User.all[6].name} was very reliable and well educated to tutor my child. He was a wonderful help!", rating: 4)
+review3 = Review.find_or_create_by(customer_id: User.third.id, course_id: reading.id, content: "#{User.all[7].name} is a wonderful tutor. I found her to be very calm, friendly and helpful.", rating: 4)
+review4 = Review.find_or_create_by(customer_id: User.fourth.id, course_id: chemistry.id, content: "#{User.all[8].name} is such a wonderful tutor, and great with young students! Would highly recommend!", rating: 5)
+review5 = Review.find_or_create_by(customer_id: User.fifth.id, course_id: violin.id, content: "#{User.all[9].name} was an excellent teacher for my child. He genuinely loves to come in and learn how to play the violin!", rating: 5)

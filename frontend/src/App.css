@@ -7,8 +7,7 @@
   font-family: 'Dancing Script', cursive;
 }
 
-.welcome.container {
-  background-image: url("https://images.pexels.com/photos/247819/pexels-photo-247819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+.ui.container.welcome.container {
   background-size: cover !important;
   background-repeat: no-repeat;
   width: auto;
@@ -26,7 +25,6 @@
 .ui.stackable.menu{
   position: absolute;
   bottom: 0; left: 0; right: 0;
-
 }
 
 .App-header {
@@ -47,12 +45,11 @@
 .welcome {
   font-family: 'Dancing Script', cursive;
   font-size: 125px;
-  text-align: center;
-  position: relative;
   animation-name: example;
   animation-duration: 3s;
   animation-delay: 2s;
   animation-fill-mode: backwards;
+
 
   @keyframes example {
   from {top: 0px}
@@ -85,6 +82,15 @@
 
 .categories{
   color: black;
+}
+
+.ui.menu{
+  margin-bottom: 0px;
+}
+
+.welcome.container{
+  position: relative;
+  text-align: center;
 }
 
 .ui.card.course.cards{
@@ -202,4 +208,41 @@
 
 .ui.inverted.segment{
   right: 25%
+}
+
+.content{
+  padding-bottom: 0px;
+}
+
+.right.item {
+  position: absolute;
+  float: right;
+
+}
+
+.welcome.image{
+  position: fixed;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ui.stackable.footer.menu{
+
 }
