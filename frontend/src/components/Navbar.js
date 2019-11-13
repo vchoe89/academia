@@ -32,23 +32,13 @@ function Navbar(props) {
         to='/courses'
         />
 
-      <div className='user welcome'>
-        {
-          props.currentUser === null ? null : <h4>Welcome {(props.currentUser.name)}!</h4>
-        }
-      </div>
+        {props.currentUser === null ? null :
+          <Menu.Item id='name-header' position='right'> Welcome {props.currentUser.name} </Menu.Item>}
 
-      <Menu.Item
-        name='View Your Profile'
-        as={Link}
 
-        />
-
-      <Menu.Item position="right"
-        name='sign in'
-        as={Link}
-        to='/login'
-      />
+        <Menu.Item position='right' id='signin-button' as={Link} to="/login">
+          {props.currentUser === null ? "Sign In" : "Sign Out"}
+        </Menu.Item>
     </Menu>
   )
 }
