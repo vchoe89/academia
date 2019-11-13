@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Card, Button, Popup} from 'semantic-ui-react'
+import swal from 'sweetalert';
 
 const CourseDetails = (props) => {
 
@@ -13,8 +14,10 @@ const CourseDetails = (props) => {
           <Card.Description>Education: {props.course.instructor.education}</Card.Description>
           <Card.Description>${props.course.hourly_rate} per hour</Card.Description>
           <Card.Description>Located in: {props.course.location}</Card.Description>
-            <div className='book button'>
-              <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
+            <div className='book-button'>
+              {props.currentUser === null ? <Button color='green' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Book</Button> :
+                <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
+              }
               </div>
         </Card.Content>
       </Card>

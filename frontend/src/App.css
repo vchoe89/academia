@@ -294,9 +294,10 @@
 }
 
 #category-cards{
-  padding-right: 600px;
+  padding-right: 50px;
   padding-left: 50px;
   padding-top: 20px;
+  margin-right: 600px;
 }
 
 #category-title{
@@ -306,29 +307,21 @@
 }
 
 #each-course-card{
-  height: auto;
+  min-height: 40vh;
 
 }
 
-
 #course-page{
-  background-image: url('https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('https://images.pexels.com/photos/2675050/pexels-photo-2675050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   position: absolute;
   background-size: cover !important;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
   padding-top: 70px;
   padding-right: 500px;
   padding-left: 50px;
 }
 
-#login-form{
-  margin-left: 400px;
-  margin-right: 600px;
-  /* padding-left: 500px; */
-  padding-top: 200px;
-}
 
 #login-page{
   background-image: url('https://images.pexels.com/photos/1007023/pexels-photo-1007023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
@@ -352,4 +345,52 @@
   padding-top: 100px;
   padding-left: 100px;
   padding-right: 200px;
+}
+
+.book-button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2vh;
+}
+
+#job-form-page{
+  background-image: url('https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  position: absolute;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+#rate-dropdown.ui.selection.dropdown{
+  margin-right: 100px;
+}
+
+#job-form{
+  position: absolute;
+  top: 200px;
+  color: white;
+}
+
+#new-user-form{
+  text-align: center;
+  position: absolute;
+  float: right;
+  margin-top: 200px;
+  min-height: 400px;
+}
+
+
+#name-header{
+  margin-left: 1080px !important
+}
+
+
+
+#login-form{
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 200px;
+  min-height: 400px;
 }

@@ -39,17 +39,18 @@ const JobForm = (props) => {
 
 
   return(
-      <Container textAlign='centered'>
+      <div id='job-form-page'>
+      <Container textAlign='centered' id='job-form'>
+        <h1>Form</h1>
           <Form onSubmit={handleSubmit}>
               <Form.Input onChange={(e) => setCourse(e.target.value)} value={course} name='course' label='Course Name' placeholder='Course Name' width={7} />
-                <Menu>
-                  <Dropdown placeholder='Your Rate' onChange={(e, {value}) => setRate(value)} value={props.value} selection options={rates} />
+                  <Dropdown id='rate-dropdown' placeholder='Your Rate' onChange={(e, {value}) => setRate(value)} value={props.value} selection options={rates} />
                   <Dropdown placeholder='Select a Category' onChange={(e, {value}) => setCategory(value)} value={props.value} selection options={categoryDropDown()} />
-                </Menu>
               <Form.Input label='Loction' onChange={(e) => setLocation(e.target.value)} value={location} placeholder='City, State' width={7} />
             <Button type='submit'>Submit</Button>
           </Form>
       </Container>
+      </div>
 
   )
 }
