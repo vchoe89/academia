@@ -304,3 +304,52 @@
   display: inline-block;
   color: white;
 }
+
+#each-course-card{
+  height: auto;
+
+}
+
+
+#course-page{
+  background-image: url('https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  position: absolute;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+  padding-right: 500px;
+  padding-left: 50px;
+}
+
+#login-form{
+  margin-left: 400px;
+  margin-right: 600px;
+  /* padding-left: 500px; */
+  padding-top: 200px;
+}
+
+#login-page{
+  background-image: url('https://images.pexels.com/photos/1007023/pexels-photo-1007023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  position: absolute;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+#your-courses-page{
+  background-image: url('https://images.pexels.com/photos/1007023/pexels-photo-1007023.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  position: absolute;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+#your-courses-cards{
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 200px;
+}

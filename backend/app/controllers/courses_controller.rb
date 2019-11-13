@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
 
   def create
     course = Course.create(course_params)
-    render json: course
+    render json: course.to_json(courses_serializer)
   end
 
 

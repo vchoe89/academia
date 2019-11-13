@@ -6,8 +6,8 @@ const CourseCard = (props) => {
 
 
   return(
-    <div>
-      <Card.Group itemsPerRow={4}>
+      <div id='course-page'>
+      <Card.Group  itemsPerRow={4}>
         {
         props.courses.map(course => {
       return <CourseDetails button={props.button} currentUser={props.currentUser} bookCourse={props.bookCourse} course={course}/>

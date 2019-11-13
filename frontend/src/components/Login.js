@@ -29,7 +29,8 @@ const Login = (props) => {
 
 
   return(
-    <Container textAlign='centered'>
+    <div id='login-page'>
+    <div id='login-form'>
       <Segment inverted>
         <div className='login form text'><div className='existing user'>Existing User</div>
         <Form inverted onSubmit={handleLoginSubmit}>
@@ -44,7 +45,8 @@ const Login = (props) => {
         </Form>
         </div>
       </Segment>
-    </Container>
+    </div>
+    </div>
   )
 
 

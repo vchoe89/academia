@@ -7,15 +7,16 @@ import YourCourseDetails from './YourCourseDetails.js'
 const YourCourses = (props) => {
 
   return(
-    <Container textAlign='center'>
-      <Card.Group>
-        {props.bookedCourses.map(course => {
-         return <YourCourseDetails course={course} />
-        })
-      }
-      </Card.Group>
-    </Container>
+    <div id='your-courses-page'>
 
+        <Card.Group id='your-courses-cards' itemsPerRow={5}>
+          {props.bookedCourses.map(course => {
+           return <YourCourseDetails course={course} />
+          })
+        }
+        </Card.Group>
+
+    </div>
 
 
 

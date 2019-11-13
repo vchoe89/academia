@@ -22,6 +22,7 @@ const MainContainer = (props) => {
       </Card.Group>
       </div>
     </div>
+
     </React.Fragment>
   )
 }
