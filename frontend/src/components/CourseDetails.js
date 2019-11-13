@@ -5,22 +5,19 @@ const CourseDetails = (props) => {
 
 
   return(
-    <Card.Group>
-      <Card >
+      <Card>
         <Card.Content>
-          <Card.Header>{props.course.name}</Card.Header>
-          <Card.Meta>Taught by: {props.course.instructor.name}</Card.Meta>
+          <Card.Header className='course name'>{props.course.name}</Card.Header>
+          <Card.Header className='instructor'>Taught by: {props.course.instructor.name}</Card.Header>
+          <Card.Description>Learn more about the instructor</Card.Description>
+          <Card.Description>Education: {props.course.instructor.education}</Card.Description>
           <Card.Description>${props.course.hourly_rate} per hour</Card.Description>
           <Card.Description>Located in: {props.course.location}</Card.Description>
+            <div className='book button'>
+              <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
+              </div>
         </Card.Content>
-          <Card.Content extra>
-                <div className='book button'>
-                  <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
-                </div>
-          </Card.Content>
       </Card>
-    </Card.Group>
-
   )
 }
 

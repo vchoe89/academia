@@ -1,20 +1,20 @@
 import React, {useState} from 'react'
 import CourseDetails from './CourseDetails.js'
-import {Container, Grid} from 'semantic-ui-react'
+import {Container, Grid, Card} from 'semantic-ui-react'
 
 const CourseCard = (props) => {
 
 
   return(
-    <Container textAlign='center'>
-      <Grid className='course details'>
+    <div>
+      <Card.Group itemsPerRow={4}>
         {
         props.courses.map(course => {
       return <CourseDetails button={props.button} currentUser={props.currentUser} bookCourse={props.bookCourse} course={course}/>
     })
   }
-      </Grid>
-    </Container>
+      </Card.Group>
+      </div>
   )
 }
 
