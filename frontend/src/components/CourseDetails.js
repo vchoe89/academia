@@ -5,7 +5,7 @@ const CourseDetails = (props) => {
 
 
   return(
-      <Card>
+      <Card id='each-course-card'>
         <Card.Content>
           <Card.Header className='course name'>{props.course.name}</Card.Header>
           <Card.Header className='instructor'>Taught by: {props.course.instructor.name}</Card.Header>
