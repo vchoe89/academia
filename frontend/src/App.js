@@ -93,6 +93,7 @@ function App() {
           {...currentUser, booked_courses: [...currentUser.booked_courses, bookedCourseObj]}
         )
       )
+      swal("Booking Confirmed!", "The instructor has been notified", "success")
     }
   }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'semantic-ui-react'
+import {Card, Rating} from 'semantic-ui-react'
 
 
 const YourCourseDetails = (props) => {
@@ -9,6 +9,8 @@ const YourCourseDetails = (props) => {
             <Card.Content>
               <Card.Header>{props.course.name}</Card.Header>
                 <Card.Meta>Located in: {props.course.location}</Card.Meta>
+                  <Rating icon='star' maxRating={5}/>
+
             </Card.Content>
           </Card>
 

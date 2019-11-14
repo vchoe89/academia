@@ -10,21 +10,20 @@ function Welcome(){
   return(
     <React.Fragment>
       <div className='welcome container'>
-        <img className="welcome image" src='https://images.pexels.com/photos/267586/pexels-photo-267586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'  />
+        <img className="welcome image" src='https://images.pexels.com/photos/5836/yellow-metal-design-decoration.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'/>
             <Animated animationIn="zoomInUp" animationInDuration={2500} isVisible={true}>
-                <div>
-                  <h2 className='welcome'>welcome to academia</h2>
+                <div className='welcome'>
+                  <h2 id='top-header'>Welcome to academia</h2>
                 </div>
             </Animated>
-            <Animated animationIn='zoomInDown' animationInDuration={2500} isVisible={true}>
-              <div>
-                <h3 className='welcome'>learning made easier</h3>
+            <Animated animationIn='slideInRight' animationInDuration={2500} isVisible={true}>
+              <div className='welcome'>
+                <h3 id='sub-title'>learning made easier</h3>
                   <NavLink className='ui button welcome' to="/main" isVisible={false} >Get Started</NavLink>
               </div>
             </Animated>
       </div>
 
-      <Footer />
 
     </React.Fragment>
   )
