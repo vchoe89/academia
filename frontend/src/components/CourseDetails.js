@@ -8,13 +8,15 @@ const CourseDetails = (props) => {
   return(
       <Card id='each-course-card'>
         <Card.Content>
-          <Card.Header className='course name'>{props.course.name}</Card.Header>
-          <Card.Header className='instructor'>Taught by: {props.course.instructor.name}</Card.Header>
-          <Card.Description>Learn more about the instructor</Card.Description>
+          <Card.Header className='course name' id='course-name-header'>{props.course.name}</Card.Header>
+          <Card.Header className='instructor' id='taught-by'>Taught by: {props.course.instructor.name}</Card.Header>
+          <Card.Description id='learn-more-description'>Learn more about the instructor</Card.Description>
           <Card.Description>Education: {props.course.instructor.education}</Card.Description>
           <Card.Description>${props.course.hourly_rate} per hour</Card.Description>
           <Card.Description>Located in: {props.course.location}</Card.Description>
           <div id='email-button'>
+
+            {props.currentUser === null ? <Button basic color='red' size='medium' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Contact Instructor</Button> :
             <Button basic color='red' size="medium" onClick={()=> swal("Message:", {
                 content: "input",
               })
@@ -23,7 +25,8 @@ const CourseDetails = (props) => {
               })
             }>
               Contact Instructor
-            </Button>
+            </Button>}
+
           </div>
 
 

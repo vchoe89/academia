@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {Container, Form, Menu, Dropdown, Button} from 'semantic-ui-react'
+import swal from 'sweetalert';
 
 
 const rates =[
@@ -43,11 +44,11 @@ const JobForm = (props) => {
       <Container textAlign='centered' id='job-form'>
         <h1>Love to Teach?</h1>
           <Form onSubmit={handleSubmit}>
-              <Form.Input onChange={(e) => setCourse(e.target.value)} value={course} name='course' label='Course Name' placeholder='Course Name' width={7} />
+              <Form.Input className='form-course-name' onChange={(e) => setCourse(e.target.value)} value={course} name='course' label='Course Name' placeholder='Course Name' width={7} />
                   <Dropdown id='rate-dropdown' placeholder='Your Rate' onChange={(e, {value}) => setRate(value)} value={props.value} selection options={rates} />
                   <Dropdown placeholder='Select a Category' onChange={(e, {value}) => setCategory(value)} value={props.value} selection options={categoryDropDown()} />
               <Form.Input label='Loction' onChange={(e) => setLocation(e.target.value)} value={location} placeholder='City, State' width={7} />
-            <Button type='submit'>Submit</Button>
+            <Button type='submit' onClick={()=> swal("Success", "You have summitted a course", "success")}>Submit</Button>
           </Form>
       </Container>
       </div>
