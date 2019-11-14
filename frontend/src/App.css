@@ -349,7 +349,9 @@
 }
 
 #each-course-card{
+  background-image: url("https://images.pexels.com/photos/1804035/pexels-photo-1804035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   min-height: 40vh;
+
 
 }
 
@@ -435,8 +437,9 @@
 
 
 #name-header{
-  margin-left: 1400px !important;
+  margin-left: 1310px !important;
   color: white;
+  font-size: 17px;
 }
 
 
@@ -449,14 +452,20 @@
 }
 
 #your-course-details-card{
+  background-image: url("https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   height: 200px;
 }
 
 #nav-bar-text{
   color: white;
   font-weight: bold;
+  font-size: 18px;
 }
 
 #location-line{
   font-weight: bold;
+}
+
+#your-details-header{
+  font-size: 30px;
 }
