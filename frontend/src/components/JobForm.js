@@ -41,7 +41,7 @@ const JobForm = (props) => {
   return(
       <div id='job-form-page'>
       <Container textAlign='centered' id='job-form'>
-        <h1>Form</h1>
+        <h1>Love to Teach?</h1>
           <Form onSubmit={handleSubmit}>
               <Form.Input onChange={(e) => setCourse(e.target.value)} value={course} name='course' label='Course Name' placeholder='Course Name' width={7} />
                   <Dropdown id='rate-dropdown' placeholder='Your Rate' onChange={(e, {value}) => setRate(value)} value={props.value} selection options={rates} />
