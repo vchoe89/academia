@@ -14,6 +14,20 @@ const CourseDetails = (props) => {
           <Card.Description>Education: {props.course.instructor.education}</Card.Description>
           <Card.Description>${props.course.hourly_rate} per hour</Card.Description>
           <Card.Description>Located in: {props.course.location}</Card.Description>
+          <div id='email-button'>
+            <Button basic color='red' size="medium" onClick={()=> swal("Message:", {
+                content: "input",
+              })
+              .then(() => {
+                swal("Success", "Your message has been sent to the instructor", "success" )
+              })
+            }>
+              Contact Instructor
+            </Button>
+          </div>
+
+
+
             <div className='book-button'>
               {props.currentUser === null ? <Button color='green' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Book</Button> :
                 <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>

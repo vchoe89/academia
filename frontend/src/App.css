@@ -94,6 +94,10 @@
 #welcome-button{
   text-align: center;
   margin-right: 700px;
+  color: black;
+  background-color: #F9F303;
+  font-size: 20px;
+  outline-color: black;
 }
 /* .second.welcome {
   font-family: 'Playball', cursive;
@@ -390,6 +394,13 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  margin: 2vh;
+}
+
+#email-button{
+  position: absolute;
+  bottom: 0;
+  left: 0;
   margin: 2vh;
 }
 
