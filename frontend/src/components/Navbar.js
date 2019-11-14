@@ -32,6 +32,7 @@ function Navbar(props) {
         to='/courses'
         />
 
+
         {props.currentUser === null ? null :
           <Menu.Item id='name-header' position='right'> Welcome {props.currentUser.name} </Menu.Item>}
 
