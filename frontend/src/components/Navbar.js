@@ -31,7 +31,7 @@ function Navbar(props) {
 
 
         {props.currentUser === null ? null :
-          <Menu.Item id='name-header' position='right'> Welcome {props.currentUser.name} </Menu.Item>}
+          <Menu.Item id='name-header' position='right'> Welcome {props.currentUser.name} !</Menu.Item>}
 
 
         <Menu.Item position='right' id='nav-bar-text' as={Link} to="/login">

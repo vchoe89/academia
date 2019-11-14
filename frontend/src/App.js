@@ -28,20 +28,7 @@ function App() {
 
   const [courses, setCourses] = useState([])
   const [categories, setCategories] = useState([])
-  const [currentUser, setCurrentUser] = useState({
-id: 189,
-name: "Garret Fahey",
-address: "40244 Archie Street",
-birthday: "1998-04-08",
-email: "arie_frami@example.net",
-phone_number: "265.239.4954",
-profile_image: null,
-education: "South Krajcik",
-skills: null,
-travel_distance: null,
-bio: null,
-booked_courses: [ ]
-})
+  const [currentUser, setCurrentUser] = useState(null)
 
   const [bookedCourses, setBookedCourses] = useState([])
   const [users, setUsers] = useState([])
