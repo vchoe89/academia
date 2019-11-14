@@ -64,11 +64,23 @@
   font-family: 'Work Sans', sans-serif;
   font-weight: 200;
   font-style: italic;
+  padding-right: 500px;
 
+}
+
+.ui.menu{
+  background-color: #191C30;
+  color: white !important;
+
+}
+
+.item{
+  color: white;
 }
 
 #sub-title{
   font-size: 80px;
+  padding-right: 200px;
 }
 
 /* .second.welcome {
