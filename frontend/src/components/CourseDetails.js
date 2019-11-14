@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Card, Button, Popup} from 'semantic-ui-react'
+import {Card, Button, Popup, Rating} from 'semantic-ui-react'
 import swal from 'sweetalert';
 
 const CourseDetails = (props) => {

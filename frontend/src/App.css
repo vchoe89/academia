@@ -3,9 +3,9 @@
 
 }
 
-.header {
+/* .header {
   font-family: 'Dancing Script', cursive;
-}
+} */
 
 .ui.container.welcome.container {
   background-size: cover !important;
@@ -42,19 +42,33 @@
   color: #09d3ac;
 }
 
-.welcome {
-  font-family: 'Playball', cursive;
+/* .welcome {
   font-size: 125px;
   animation-name: example;
   animation-duration: 3s;
   animation-delay: 2s;
   animation-fill-mode: backwards;
-
-
+  margin-right: 400px;
   @keyframes example {
   from {top: 0px}
   to {top: 200px;}
   }
+} */
+
+.welcome{
+  margin-right: 400px;
+}
+
+#top-header{
+  font-size: 90px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+
+}
+
+#sub-title{
+  font-size: 80px;
 }
 
 /* .second.welcome {
@@ -383,7 +397,7 @@
 
 
 #name-header{
-  margin-left: 1080px !important
+  margin-left: 1000px !important
 }
 
 
