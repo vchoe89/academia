@@ -7,6 +7,7 @@ function Navbar(props) {
 
     <Menu>
       <Menu.Item
+
         as={Link}
         to="/main"
         >
@@ -14,12 +15,7 @@ function Navbar(props) {
         </Menu.Item>
 
       <Menu.Item
-        name='aboutUs'
-        as={Link}
-        to="/about"
-      />
-
-      <Menu.Item
+        id="nav-bar-text"
         name='Teach'
         as={Link}
         to="/JobForm"
@@ -27,6 +23,7 @@ function Navbar(props) {
       />
 
       <Menu.Item
+        id="nav-bar-text"
         name='Your Courses'
         as={Link}
         to='/courses'
@@ -37,7 +34,7 @@ function Navbar(props) {
           <Menu.Item id='name-header' position='right'> Welcome {props.currentUser.name} </Menu.Item>}
 
 
-        <Menu.Item position='right' id='signin-button' as={Link} to="/login">
+        <Menu.Item position='right' id='nav-bar-text' as={Link} to="/login">
           {props.currentUser === null ? "Sign In" : "Sign Out"}
         </Menu.Item>
     </Menu>

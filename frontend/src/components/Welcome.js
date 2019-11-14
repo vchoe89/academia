@@ -18,8 +18,9 @@ function Welcome(){
             </Animated>
             <Animated animationIn='slideInRight' animationInDuration={2500} isVisible={true}>
               <div className='welcome'>
-                <h3 id='sub-title'>learning made easier</h3>
-                  <NavLink className='ui button welcome' to="/main" isVisible={false} >Get Started</NavLink>
+                <h3 id='sub-title'>learning made</h3>
+                  <h3 id='bottom-sub-title'>easier</h3>
+                  <NavLink id='welcome-button' className='ui button welcome' to="/main" isVisible={false} >Get Started</NavLink>
               </div>
             </Animated>
       </div>
