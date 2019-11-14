@@ -152,6 +152,7 @@ function App() {
         <Route exact path="/courses" render={(props) => {
             if(currentUser === null){
               swal("Oops", "You must be logged in to view your courses!", "error")
+              return <Redirect to='/login'/>
             }else{
               let bookedCourses = currentUser.booked_courses.map(course => {
                 return course
