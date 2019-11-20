@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import CourseDetails from './CourseDetails.js'
-import {Container, Grid, Card} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 
 const CourseCard = (props) => {
 
