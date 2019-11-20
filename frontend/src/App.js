@@ -105,7 +105,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/main" render={(props) => {
-              return <MainContainer currentUser={currentUser} categories={categories}/>}}/>
+              return <MainContainer courses={courses} currentUser={currentUser} categories={categories}/>}}/>
 
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)

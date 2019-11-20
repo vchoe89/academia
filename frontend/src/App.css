@@ -482,8 +482,15 @@
 }
 
 
-#featured{
+#featured-component{
   position: absolute;
-  float: right;
+  left: 1000px;
+  display: inline-block;
+  color: white;
+}
 
+#featured-header{
+  font-family: 'Pacifico', cursive;
+  padding-right: 800px;
+  font-size: 450%;
 }
