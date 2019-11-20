@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Form, Input, Container, Divider, Segment, Button} from 'semantic-ui-react'
+import React, {useState} from 'react'
+import { Form, Segment, Button} from 'semantic-ui-react'
 
 const URL = 'http://localhost:3000/'
 

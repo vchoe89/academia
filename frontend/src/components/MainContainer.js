@@ -1,4 +1,5 @@
 import React from 'react'
+import FeaturedClasses from './FeaturedClasses.js'
 import {Card, Grid, Container, Image} from 'semantic-ui-react'
 import Categories from './Categories.js'
 import {Animated} from "react-animated-css";
@@ -17,7 +18,6 @@ const MainContainer = (props) => {
           <Animated animationIn='slideInLeft' animationInDuration={2500}>
             <p className='category description'>Narrow your search by selecting a category</p>
           </Animated>
-
         </div>
         <Card.Group id='category-cards'>
       {
@@ -26,9 +26,8 @@ const MainContainer = (props) => {
       })
     }
       </Card.Group>
-
     </div>
-
+    <FeaturedClasses />
     </React.Fragment>
   )
 }

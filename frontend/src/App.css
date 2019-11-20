@@ -480,3 +480,10 @@
   font-size: 17px;
   font-weight: bolder;
 }
+
+
+#featured{
+  position: absolute;
+  float: right;
+
+}

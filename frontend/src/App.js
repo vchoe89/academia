@@ -47,12 +47,6 @@ function App() {
     setReviews(reviewsFetch)
   },[reviewsFetch])
 
-
-
-
-
-
-
   const handleCourse = (course) => {
     course.instructor_id = currentUser.id
     let configObj = {
@@ -65,7 +59,6 @@ function App() {
     fetch(URL+'courses', configObj)
     .then(r => r.json())
     .then(newCourseObj =>
-      // console.log([...courses, newCourseObj])
       setCourses([...courses, newCourseObj])
       )
   }
@@ -105,11 +98,6 @@ function App() {
     }
   }
 
-  const currentUsersCourses = () => {
-    return currentUser.booked_courses.map(course => {
-      return course
-    })
-  }
 
     return(
       <Router>

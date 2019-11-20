@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import {Container, Form, Menu, Dropdown, Button} from 'semantic-ui-react'
+import React, { useState } from 'react'
+import {Container, Form, Dropdown, Button} from 'semantic-ui-react'
 import swal from 'sweetalert';
 
 
