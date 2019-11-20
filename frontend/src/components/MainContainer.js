@@ -27,7 +27,7 @@ const MainContainer = (props) => {
     }
       </Card.Group>
     </div>
-    <FeaturedClasses />
+    <FeaturedClasses courses={props.courses}/>
     </React.Fragment>
   )
 }
