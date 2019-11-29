@@ -483,14 +483,15 @@
 
 
 #featured-component{
-  position: absolute;
-  left: 1000px;
-  display: inline-block;
   color: white;
 }
 
 #featured-header{
+  position: absolute;
+  left: 1000px;
   font-family: 'Pacifico', cursive;
   padding-right: 800px;
   font-size: 450%;
+  white-space: nowrap;
+
 }
