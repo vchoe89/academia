@@ -98,7 +98,6 @@ function App() {
     }
   }
 
-
     return(
       <Router>
         <Navbar currentUser={currentUser}/>
