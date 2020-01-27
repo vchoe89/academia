@@ -10,7 +10,7 @@ To run the back end type "rails start".
 
 To run the front end type "npm start"
 
-#Built with
+# Built with
 
 Ruby on Rails - Back end Framework
 JavaScript - Front end language
