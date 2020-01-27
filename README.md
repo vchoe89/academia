@@ -13,5 +13,5 @@ To run the front end type "npm start"
 # Built with
 
 - Ruby on Rails - Back end Framework
-+ JavaScript - Front end language
-+ React.JS & React.Hooks - Front end Framework
+- JavaScript - Front end language
+- React.JS & React.Hooks - Front end Framework
