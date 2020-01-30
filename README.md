@@ -4,10 +4,13 @@ Welcome to Academia, an easy to use web application that allows busy parents hel
 
 # Getting Started
 
-To install this application first copy the link and clone down a copy of the application to your local machine (git clone https://github.com/vchoe89/academia.git) from your terminal.
+To install this application, copy and paste <git clone https://github.com/vchoe89/academia.git> in your terminal.
 
-To run the back end, in your terminal, type "rails start" and "npm start" to run your front end.
+To run the back end, type "rails start".
 
+In a new terminal window (ctr+t), type "npm start" to run your front end.
+
+**NOTE**
 The back end should run in localhost:3000 while front end runs on localhost:3001
 
 # Built with
