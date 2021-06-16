@@ -352,8 +352,6 @@
 #each-course-card{
   background-image: url("https://images.pexels.com/photos/304664/pexels-photo-304664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   min-height: 40vh;
-
-
 }
 
 #course-page{
@@ -363,10 +361,17 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+}
+
+#course-page-container{
+  position: relative;
+
   padding-top: 70px;
   padding-right: 500px;
   padding-left: 50px;
 }
+
+
 
 
 #login-page{
@@ -492,5 +497,14 @@
   padding-right: 800px;
   font-size: 450%;
   white-space: nowrap;
+}
+
+.ui.negative.button{
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 20px;
 
 }
