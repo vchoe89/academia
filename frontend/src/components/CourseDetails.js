@@ -4,19 +4,31 @@ import swal from 'sweetalert';
 
 const CourseDetails = (props) => {
 
-
   return(
       <Card id='each-course-card'>
+
         <Card.Content>
           <Card.Header className='course name' id='course-name-header'>{props.course.name}</Card.Header>
+
           <Card.Header className='instructor' id='taught-by'>Taught by: {props.course.instructor.name}</Card.Header>
+
           <Card.Description id='learn-more-description'>Learn more about the instructor</Card.Description>
-          <Card.Description>Education: {props.course.instructor.education}</Card.Description>
-          <Card.Description>${props.course.hourly_rate} per hour</Card.Description>
-          <Card.Description>Located in: {props.course.location}</Card.Description>
+
+          <Card.Description>
+            Education: {props.course.instructor.education}
+          </Card.Description>
+
+          <Card.Description>
+            ${props.course.hourly_rate} per hour</Card.Description>
+
+          <Card.Description>
+            Located in: {props.course.location}
+          </Card.Description>
+
           <div id='email-button'>
 
-            {props.currentUser === null ? <Button basic color='red' size='medium' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Contact Instructor</Button> :
+            {props.currentUser === null ? <Button basic color='red' size='medium' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Contact Instructor
+            </Button> :
             <Button basic color='red' size="medium" onClick={()=> swal("Message:", {
                 content: "input",
               })
@@ -29,10 +41,12 @@ const CourseDetails = (props) => {
 
           </div>
 
-
-
             <div className='book-button'>
-              {props.currentUser === null ? <Button color='green' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>Book</Button> :
+
+              {props.currentUser === null ? <Button color='green' onClick={()=> swal("Oops", "You must be logged in to book a class!", "warning")}>
+              Book
+              </Button> :
+              
                 <Button color='green' disabled={props.currentUser.booked_courses.map(course => course.id).includes(props.course.id) ? true : false} onClick={(e) => props.bookCourse(props.course, props.currentUser)} >Book</Button>
               }
               </div>

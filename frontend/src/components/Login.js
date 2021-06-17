@@ -7,7 +7,6 @@ const Login = (props) => {
 
   const [user, setUser] = useState("")
 
-
   const handleLoginSubmit = () => {
     fetch(URL+'users', {
       method: "POST",
@@ -24,9 +23,6 @@ const Login = (props) => {
       props.onChangeUser(userData)
     })
   }
-
-
-
 
   return(
     <div id='login-page'>

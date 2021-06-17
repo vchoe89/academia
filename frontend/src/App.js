@@ -9,10 +9,9 @@ import Login from './components/Login.js'
 import JobForm from './components/JobForm.js'
 import YourCourses from './components/YourCourses.js'
 import { useFetch } from './Hooks/useFetch.js'
-import CourseCard from './components/CourseCard.js'
-import Image from './images/learn_image.jpeg'
-import Footer from './components/Footer.js'
+import CourseCard from './components/CourseCard.js';
 import swal from 'sweetalert';
+import history from './components/History.js'
 
 
 
@@ -104,7 +103,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/main" render={(props) => {
-              return <MainContainer courses={courses} currentUser={currentUser} categories={categories}/>}}/>
+              return <MainContainer courses={courses} currentUser={currentUser}  history={history} categories={categories}/>}}/>
 
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)
