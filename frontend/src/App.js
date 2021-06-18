@@ -4,14 +4,12 @@ import Welcome from './components/Welcome.js'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import MainContainer from './components/MainContainer.js'
-import About from './components/About.js'
 import Login from './components/Login.js'
 import JobForm from './components/JobForm.js'
 import YourCourses from './components/YourCourses.js'
 import { useFetch } from './Hooks/useFetch.js'
 import CourseCard from './components/CourseCard.js';
 import swal from 'sweetalert';
-import history from './components/History.js'
 
 
 
@@ -103,7 +101,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/main" render={(props) => {
-              return <MainContainer courses={courses} currentUser={currentUser}  history={history} categories={categories}/>}}/>
+              return <MainContainer courses={courses} currentUser={currentUser} categories={categories}/>}}/>
 
           <Route exact path="/math" render={(props) => {
               let categoryId = props.match.url.slice(1)
@@ -154,7 +152,6 @@ function App() {
             <Redirect to='main' />
           }}/>
 
-        <Route exact path="/about" component={About} />
         <Route exact path="/JobForm"  render={(props) => {
           return currentUser === null ? <Redirect to="/Login"/> :
             <JobForm handleCourse={handleCourse} categories={categories} />

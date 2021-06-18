@@ -463,7 +463,34 @@
   height: 200px;
 }
 
-#nav-bar-text{
+#nav-bar-text-main{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+#nav-bar-text-teach{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+#nav-bar-text-courses{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+#nav-bar-text-about{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: auto !important;
+}
+#nav-bar-text-signin{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#nav-bar-text-mission{
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -506,5 +533,14 @@
   right: 0;
   margin-top: 20px;
   margin-right: 20px;
+}
 
+#welcome-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
 }

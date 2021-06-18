@@ -13,8 +13,9 @@ const CourseCard = (props) => {
       <Card.Group  itemsPerRow={4}>
         {
         props.courses.map(course => {
-          return
+          return (
           <CourseDetails button={props.button} currentUser={props.currentUser} bookCourse={props.bookCourse} course={course} />
+          )
           })
         }
       </Card.Group>
@@ -25,7 +26,7 @@ const CourseCard = (props) => {
 
       }
         }>Back</Button>
-      </div>
+    </div>
 
   )
 }
